@@ -1,0 +1,62 @@
+{
+  "name": "await-check-suites-2",
+  "description": "GitHub action that waits for a commit's check suites to complete",
+  "version": "1.0.0",
+  "private": true,
+  "author": "Jitterbit, Inc.",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lofoyet/await-check-suites.git"
+  },
+  "homepage": "https://github.com/lofoyet/await-check-suites#readme",
+  "bugs": {
+    "url": "https://github.com/lofoyet/await-check-suites/issues"
+  },
+  "keywords": [
+    "GitHub",
+    "Actions",
+    "TypeScript",
+    "JavaScript",
+    "Wait",
+    "Await",
+    "Commit",
+    "Check",
+    "Suites"
+  ],
+  "main": "lib/main.js",
+  "engines": {
+    "node": "^12.0.0"
+  },
+  "scripts": {
+    "clean": "rimraf dist/**/* lib/**/*",
+    "build": "tsc",
+    "format": "prettier --write **/*.ts",
+    "format:check": "prettier --check **/*.ts",
+    "lint": "eslint src/**/*.ts",
+    "package": "ncc build",
+    "test": "jest",
+    "all": "yarn clean && yarn build && yarn format && yarn lint && yarn package && yarn test"
+  },
+  "dependencies": {
+    "@actions/core": "^1.2.3",
+    "@actions/github": "^2.1.1"
+  },
+  "devDependencies": {
+    "@octokit/rest": "^16.43.1",
+    "@types/jest": "^25.1.3",
+    "@types/node": "^12.12.29",
+    "@typescript-eslint/parser": "^2.22.0",
+    "@zeit/ncc": "^0.21.1",
+    "eslint": "^6.8.0",
+    "eslint-plugin-github": "^3.4.1",
+    "eslint-plugin-jest": "^23.8.1",
+    "jest": "^25.1.0",
+    "jest-circus": "^25.1.0",
+    "js-yaml": "^3.13.1",
+    "prettier": "^1.19.1",
+    "rimraf": "^3.0.2",
+    "ts-jest": "^25.2.1",
+    "typescript": "~3.8.3"
+  }
+}
